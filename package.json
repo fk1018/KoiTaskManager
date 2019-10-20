@@ -1,0 +1,39 @@
+{
+  "name": "koitaskmanager",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "fk",
+  "main": "dist/index.js",
+  "module": "dist/koitaskmanager.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/faker": "^4.1.6",
+    "@types/jest": "^24.0.19",
+    "faker": "^4.1.0",
+    "husky": "^3.0.9",
+    "tsdx": "^0.10.5",
+    "tslib": "^1.10.0"
+  },
+  "dependencies": {}
+}
