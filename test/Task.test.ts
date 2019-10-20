@@ -1,17 +1,17 @@
 import {Any} from './Any';
 
-describe('Task Model:', () => {
+describe('Task Model', () => {
   describe('Testing generic used to test task: ', () => {
     describe('When task is created with empty params:',()=>{
-      it('task has an id property',()=>{
+      it('id value to be truthy',()=>{
         const beforeTask = Any.Task({});
         
-        expect(beforeTask).toHaveProperty('id');
+        expect(beforeTask.id).toBeTruthy();
       });
-      it('task has an name property',()=>{
+      it('name value to be truthy',()=>{
         const beforeTask = Any.Task({});
         
-        expect(beforeTask).toHaveProperty('name');
+        expect(beforeTask.name).toBeTruthy();
       });
     });
   });
