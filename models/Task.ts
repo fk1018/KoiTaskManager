@@ -1,6 +1,6 @@
-import { Proxy } from './Proxy';
+import { ProxyList } from './ProxyList';
 export interface Task {
-  id?: number;
-  name?: string;
-  proxylist: Proxy[];
+  id: string;
+  name: string;
+  proxyList?: ProxyList;
 }
