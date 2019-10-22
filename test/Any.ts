@@ -5,7 +5,7 @@ import {Proxy} from '../models/Proxy';
 interface GenericAnyFn<T> {
   (arg: T): T;
 }
-function arrayOf<T>(arg: T[]): T[] {
+function arrayOf<T>(arg: T[]:): T[] {
   return arg;
 }
 function any<T>(arg: T): T {
@@ -22,7 +22,7 @@ const proxy: GenericAnyFn<Proxy> = any((p)=>{
   return {
     ...p,
     id:p.id || faker.random.uuid(),
-    server: p.server || `${faker.random.words().split(" ").join("")}.com`,
+    server: p.server || faker.internet.ip(),
   }
 });
 
