@@ -1,33 +1,46 @@
 import * as faker from 'faker';
 import { Task } from '../models/Task';
-import {Proxy} from '../models/Proxy';
-
-interface GenericAnyFn<T> {
-  (arg: T): T;
-}
-function arrayOf<T>(arg: T[]): T[] {
-  return arg;
-}
-function any<T>(arg: T): T {
-  return arg;
-}
-const task: GenericAnyFn<Task> = any((t)=>{
-  return {
-    id:t.id || faker.random.uuid(),
-    name: t.name || faker.random.word()
-  }
-});
-
-const proxy: GenericAnyFn<Proxy> = any((p)=>{
-  return {
-    ...p,
-    id:p.id || faker.random.uuid(),
-    server: p.server || faker.internet.ip(),
-  }
-});
+// import { Proxy } from '../models/Proxy';
+// import { ProxyList } from '../models/ProxyList';
+// import { Connection } from '../models/Connection';
 
 export const Any = {
-  arrayOf,
-  Proxy:proxy,
-  Task:task
+  arrayOf<T>(generator: () => T, count: number): T[] {
+    const returnArray: T[] = [];
+    for (let i = 0; i < count; i++) {
+      returnArray.push(generator());
+    }
+    return returnArray;
+  },
+  Task(
+    { 
+      id = faker.random.uuid(), 
+      name = faker.random.word() 
+    }: TaskParams = {
+      id: faker.random.uuid(),
+      name: faker.random.word(),
+    }
+  ): Task {
+    return {
+      id,
+      name,
+    };
+  },
+};
+
+function task(
+  { id = faker.random.uuid(), name = faker.random.word() }: TaskParams = {
+    id: faker.random.uuid(),
+    name: faker.random.word(),
+  }
+): Task {
+  return {
+    id,
+    name,
+  };
 }
+
+type TaskParams = {
+  id?: string;
+  name?: string;
+};
