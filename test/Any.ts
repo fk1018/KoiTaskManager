@@ -1,9 +1,5 @@
 import * as faker from 'faker';
 import { Task } from '../models/Task';
-// import { Site } from '../models/Site';
-// import { Proxy } from '../models/Proxy';
-// import { ProxyList } from '../models/ProxyList';
-//import { Connection } from '../models/Connection';
 
 export const Any = {
   arrayOf<T>(generator: () => T, count: number): T[] {
@@ -23,7 +19,7 @@ export const Any = {
       id: faker.random.uuid(),
       name: faker.random.word(),
       site: faker.random.uuid(),
-      proxyList: faker.random.uuid()
+      proxyList: faker.random.uuid(),
     }
   ): Task {
     return {
@@ -34,27 +30,6 @@ export const Any = {
     };
   },
 };
-
-// function task(
-//   {
-//     id = faker.random.uuid(),
-//     name = faker.random.word(),
-//     site = faker.random.uuid(),
-//     proxyList = faker.random.uuid(),
-//   }: TaskParams = {
-//     id: faker.random.uuid(),
-//     name: faker.random.word(),
-//     site: faker.random.uuid(),
-//     proxyList: faker.random.uuid()
-//   }
-// ): Task {
-//   return {
-//     id,
-//     name,
-//     site,
-//     proxyList,
-//   };
-// }
 
 type TaskParams = {
   id?: string;
