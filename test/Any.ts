@@ -1,8 +1,9 @@
 import * as faker from 'faker';
 import { Task } from '../models/Task';
-// import { Proxy } from '../models/Proxy';
-// import { ProxyList } from '../models/ProxyList';
-// import { Connection } from '../models/Connection';
+import { Site } from '../models/Site';
+//import { Proxy } from '../models/Proxy';
+import { ProxyList } from '../models/ProxyList';
+//import { Connection } from '../models/Connection';
 
 export const Any = {
   arrayOf<T>(generator: () => T, count: number): T[] {
@@ -13,9 +14,15 @@ export const Any = {
     return returnArray;
   },
   Task(
-    { 
-      id = faker.random.uuid(), 
-      name = faker.random.word() 
+    {
+      id = faker.random.uuid(),
+      name = faker.random.word(),
+      site = { id: faker.random.uuid(), name: faker.random.word() },
+      proxyList = {
+        id: faker.random.uuid(),
+        name: faker.random.word(),
+        list: [],
+      },
     }: TaskParams = {
       id: faker.random.uuid(),
       name: faker.random.word(),
@@ -24,23 +31,38 @@ export const Any = {
     return {
       id,
       name,
+      site,
+      proxyList,
     };
   },
 };
 
-function task(
-  { id = faker.random.uuid(), name = faker.random.word() }: TaskParams = {
-    id: faker.random.uuid(),
-    name: faker.random.word(),
-  }
-): Task {
-  return {
-    id,
-    name,
-  };
-}
+// function task(
+//   {
+//     id = faker.random.uuid(),
+//     name = faker.random.word(),
+//     site = { id: faker.random.uuid(), name: faker.random.word() },
+//     proxyList = {
+//       id: faker.random.uuid(),
+//       name: faker.random.word(),
+//       list: [],
+//     },
+//   }: TaskParams = {
+//     id: faker.random.uuid(),
+//     name: faker.random.word(),
+//   }
+// ): Task {
+//   return {
+//     id,
+//     name,
+//     site,
+//     proxyList,
+//   };
+// }
 
 type TaskParams = {
   id?: string;
   name?: string;
+  site?: Site;
+  proxyList?: ProxyList;
 };
