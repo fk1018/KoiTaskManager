@@ -7,5 +7,3 @@ import * as puppeteer from 'puppeteer';
 
   await browser.close();
 })(puppeteer);
-
-console.log('hey');
