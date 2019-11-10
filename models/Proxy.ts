@@ -1,10 +1,8 @@
-import {ProxyList} from './ProxyList';
-import {Connection} from './Connection';
 
 export interface Proxy {
-  connections?: Connection[];
+  connections?: string[];
   id: string;
-  lists?: ProxyList[];
+  lists?: string[];
   password?: string;
   server: string;
   userName?: string;
