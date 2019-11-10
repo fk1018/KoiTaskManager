@@ -1,4 +1,8 @@
 import * as puppeteer from 'puppeteer';
-export interface Browser extends puppeteer.Browser {
-  id:string;
+import { Page } from './Page';
+
+export interface Browser {
+  browser: puppeteer.Browser;
+  id: string;
+  pages?: Page[];
 }
