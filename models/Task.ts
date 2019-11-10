@@ -3,4 +3,5 @@ export interface Task {
   name: string;
   site: string;
   proxyList: string;
+  page?: string;
 }
