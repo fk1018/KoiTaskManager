@@ -1,8 +1,7 @@
 import * as puppeteer from 'puppeteer';
-import { Page } from './Page';
-
-export interface Browser {
+import { Task } from './Task';
+export interface TaskManager {
   browser: puppeteer.Browser;
   id: string;
-  pages?: Page[];
+  tasks?: Task[];
 }

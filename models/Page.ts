@@ -1,4 +1,5 @@
 import * as puppeteer from 'puppeteer';
-export interface Page extends puppeteer.Page {
+export interface Page{
   id:string;
+  page: puppeteer.Page;
 }
