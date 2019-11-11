@@ -1,4 +1,5 @@
 export interface Site {
   id: string;
-  name:string;
+  name: string;
+  actions?: { (): void }[];
 }
