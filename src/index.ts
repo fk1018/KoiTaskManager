@@ -2,13 +2,12 @@ import * as puppeteer from 'puppeteer';
 import { ProxyList } from '../models/ProxyList';
 import { Proxy } from '../models/Proxy';
 import { Site } from '../models/Site';
-import { SiteAction, SiteActionParams } from '../models/SiteActions';
 import { Task } from '../models/Task';
 import { TaskManager } from '../models/TaskManager';
 
 
 (async puppeteer => {
-  const proxyList: ProxyList[] = [
+  const proxyLists: ProxyList[] = [
     {
       id: '1',
       name: 'proxy list 1',
@@ -48,7 +47,8 @@ import { TaskManager } from '../models/TaskManager';
 
   const taskManager: TaskManager = { browser, id: '1' };
 
-  
+  tasks.forEach((t,i)=>{
+  })
 
   await browser.close();
 })(puppeteer);
