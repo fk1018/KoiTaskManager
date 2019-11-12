@@ -2,8 +2,11 @@ import * as puppeteer from 'puppeteer';
 import { ProxyList } from '../models/ProxyList';
 import { Proxy } from '../models/Proxy';
 import { Site } from '../models/Site';
+import { SiteAction, SiteActionParams } from '../models/SiteActions';
 import { Task } from '../models/Task';
 import { TaskManager } from '../models/TaskManager';
+
+
 (async puppeteer => {
   const proxyList: ProxyList[] = [
     {
@@ -14,16 +17,12 @@ import { TaskManager } from '../models/TaskManager';
   ];
   const sites: Site[] = [
     {
-      id: '1',
+      id: "0",
       name: 'https://google.com/',
-      actions:[
-        async (p: puppeteer.Page)=>{
-          await p.goto('https://google.com');
-        },
-        async (p: puppeteer.Page)=>{
-          await p.pdf({path: 'google.pdf'});
-        }
-      ]
+    },
+    {
+      id: "1",
+      name: 'https://yeezysupply.com/',
     },
   ];
   const proxys: Proxy[] = [
@@ -40,7 +39,7 @@ import { TaskManager } from '../models/TaskManager';
     {
       id: '1',
       name: 'Google test',
-      site: '1',
+      site: '0',
       proxyList: '1',
     },
   ];
@@ -49,6 +48,7 @@ import { TaskManager } from '../models/TaskManager';
 
   const taskManager: TaskManager = { browser, id: '1' };
 
+  
 
   await browser.close();
 })(puppeteer);
