@@ -15,7 +15,15 @@ import { TaskManager } from '../models/TaskManager';
   const sites: Site[] = [
     {
       id: '1',
-      name: 'https://yeezysupply.com/',
+      name: 'https://google.com/',
+      actions:[
+        async (p: puppeteer.Page)=>{
+          await p.goto('https://google.com');
+        },
+        async (p: puppeteer.Page)=>{
+          await p.pdf({path: 'google.pdf'});
+        }
+      ]
     },
   ];
   const proxys: Proxy[] = [
@@ -31,7 +39,7 @@ import { TaskManager } from '../models/TaskManager';
   const tasks: Task[] = [
     {
       id: '1',
-      name: 'Yeezy Supply Test Task',
+      name: 'Google test',
       site: '1',
       proxyList: '1',
     },
@@ -40,6 +48,7 @@ import { TaskManager } from '../models/TaskManager';
   const browser = await puppeteer.launch();
 
   const taskManager: TaskManager = { browser, id: '1' };
+
 
   await browser.close();
 })(puppeteer);

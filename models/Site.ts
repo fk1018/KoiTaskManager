@@ -1,5 +1,7 @@
+import * as puppeteer from 'puppeteer';
+
 export interface Site {
   id: string;
   name: string;
-  actions?: { (): void }[];
+  actions?: { (arg0:puppeteer.Page): void }[];
 }
