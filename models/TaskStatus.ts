@@ -1,7 +1,6 @@
-
 export interface TaskStatus {
-  id:string;
-  display:string;
+  id: string;
+  display: string;
 }
 
 // const statuses = [
