@@ -1,7 +1,7 @@
 
-export interface ConnectionStatus {
+export interface TaskStatus {
   id:string;
-  status:string;
+  display:string;
 }
 
 // const statuses = [
