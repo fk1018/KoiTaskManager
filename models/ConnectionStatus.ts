@@ -1,6 +1,6 @@
 
 export interface ConnectionStatus {
-  id:number;
+  id:string;
   status:string;
 }
 
