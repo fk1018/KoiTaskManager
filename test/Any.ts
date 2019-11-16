@@ -5,7 +5,6 @@ import { Site } from '../models/Site';
 import { Proxy } from '../models/Proxy';
 import { Page } from '../models/Page';
 
-
 export const Any = {
   arrayOf<T>(generator: () => T, count: number): T[] {
     const returnArray: T[] = [];
@@ -18,15 +17,15 @@ export const Any = {
     {
       id = faker.random.uuid(),
       name = faker.random.word(),
-      status = {id:faker.random.uuid(),display:faker.random.word()},
-      site = {id:faker.random.uuid(),name:faker.random.word()},
+      status = { id: faker.random.uuid(), display: faker.random.word() },
+      site = { id: faker.random.uuid(), name: faker.random.word() },
       getFromProxyPool = faker.random.boolean(),
     }: TaskParams = {
       id: faker.random.uuid(),
       name: faker.random.word(),
-      status: {id:faker.random.uuid(),display:faker.random.word()},
-      site : {id:faker.random.uuid(),name:faker.random.word()},
-      getFromProxyPool : faker.random.boolean(),
+      status: { id: faker.random.uuid(), display: faker.random.word() },
+      site: { id: faker.random.uuid(), name: faker.random.word() },
+      getFromProxyPool: faker.random.boolean(),
     }
   ): Task {
     return {
@@ -34,7 +33,7 @@ export const Any = {
       name,
       status,
       site,
-      getFromProxyPool
+      getFromProxyPool,
     };
   },
 };
@@ -44,7 +43,7 @@ type TaskParams = {
   name?: string;
   site?: Site;
   proxy?: Proxy;
-  proxyLists?: Map<string,any>;
+  proxyLists?: Map<string, any>;
   page?: Page;
   status?: TaskStatus;
   getFromProxyPool?: boolean;

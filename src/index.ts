@@ -1,54 +1,5 @@
 import * as puppeteer from 'puppeteer';
-import { ProxyList } from '../models/ProxyList';
-import { Proxy } from '../models/Proxy';
-import { Site } from '../models/Site';
-import { Task } from '../models/Task';
-import { TaskManager } from '../models/TaskManager';
-
 
 (async puppeteer => {
-  const proxyLists: ProxyList[] = [
-    {
-      id: '1',
-      name: 'proxy list 1',
-      list: ['1'],
-    },
-  ];
-  const sites: Site[] = [
-    {
-      id: "0",
-      name: 'https://google.com/',
-    },
-    {
-      id: "1",
-      name: 'https://yeezysupply.com/',
-    },
-  ];
-  const proxys: Proxy[] = [
-    {
-      id: '1',
-      lists: ['1'],
-      password: 'paseRiJw',
-      server: 'snkrs-us-S201.chicooked.io:33128',
-      userName: '8HtvXIZ6!a1',
-    },
-  ];
-
-  const tasks: Task[] = [
-    {
-      id: '1',
-      name: 'Google test',
-      site: '0',
-      proxyList: '1',
-    },
-  ];
-
-  const browser = await puppeteer.launch();
-
-  const taskManager: TaskManager = { browser, id: '1' };
-
-  tasks.forEach((t,i)=>{
-  })
-
-  await browser.close();
+  console.log(puppeteer);
 })(puppeteer);

@@ -16,5 +16,4 @@ describe('task interface', () => {
 
     expect(task.site).toBeTruthy();
   });
-
 });
