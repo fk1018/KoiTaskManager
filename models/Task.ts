@@ -5,4 +5,5 @@ export interface Task {
   proxy?:string;
   proxyList: string[];
   page?: string;
+  status: string;
 }
