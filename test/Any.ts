@@ -53,6 +53,7 @@ export const Any = {
       getFromProxyPool = faker.random.boolean(),
       product = {
         id: faker.random.uuid(),
+        name: faker.random.word(),
         productId: faker.random.uuid(),
         variants: [],
         sizes: [],
@@ -71,6 +72,7 @@ export const Any = {
       getFromProxyPool: faker.random.boolean(),
       product: {
         id: faker.random.uuid(),
+        name:faker.random.word(),
         productId: faker.random.uuid(),
         variants: [],
         sizes: [],
