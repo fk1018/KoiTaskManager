@@ -5,7 +5,7 @@ export interface Product {
   sizes?: string[];
   positiveKeywords?: string[];
   negativeKeywords?: string[];
-  url?:string;
-  imgUrl?:string;
-  styleCode?:string;
+  url?: string;
+  imgUrl?: string;
+  styleCode?: string;
 }
