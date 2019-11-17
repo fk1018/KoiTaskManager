@@ -1,7 +1,7 @@
 {
   "name": "koitaskmanager",
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "author": "fk",
   "main": "dist/index.js",
   "module": "dist/koitaskmanager.esm.js",
