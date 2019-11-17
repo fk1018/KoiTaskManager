@@ -1,6 +1,6 @@
 ## License
 
-This project is privately licensed - see the [LICENSE](LICENSE) file for details
+This project is privately licensed - see the [LICENSE.md](LICENSE.md) file for details
 ## Local Development
 
 ### `npm start` or `yarn start`
