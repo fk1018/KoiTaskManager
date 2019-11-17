@@ -6,6 +6,30 @@ import { Proxy } from '../models/Proxy';
 import { Product } from '../models/Product';
 
 export const Any = {
+  
+  Proxy(
+    {
+      id = faker.random.uuid(),
+      lists = new Map(),//@todo fix this
+      password = faker.internet.password(),
+      uri =  faker.internet.ip(),
+      userName = faker.internet.userName()
+    }: ProxyParams = {
+      id :faker.random.uuid(),
+      lists: new Map(),//@todo fix this
+      password: faker.internet.password(),
+      uri: faker.internet.ip(),
+      userName: faker.internet.userName()
+    }
+  ): Proxy {
+    return {
+      id,
+      lists,
+      password,
+      uri,
+      userName,
+    };
+  },
   Product(
     {
       id = faker.random.uuid(),
@@ -105,6 +129,16 @@ export const Helpers = {
     return returnArray;
   },
 };
+
+type ProxyParams = {
+  id?: string;
+  lists?: Map<string, any>;
+  password?: string;
+  uri?: string;
+  userName?: string;
+}
+
+
 
 type ProductParams = {
   id?: string;
