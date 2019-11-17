@@ -1,11 +1,9 @@
-import { ProxyList } from './ProxyList';
-
 export interface Proxy {
   id: string;
-  lists?: Map<proxyListId, ProxyList>;
+  lists?: Map<ProxyListId, any>;
   password?: string;
   uri: string;
   userName?: string;
 }
 
-type proxyListId = string;
+type ProxyListId = string;
