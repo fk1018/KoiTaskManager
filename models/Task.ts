@@ -1,6 +1,5 @@
 import { TaskStatus } from './TaskStatus';
 import { Proxy } from './Proxy';
-import { Page } from './Page';
 import { Product } from './Product';
 import { Site } from './Site';
 export interface Task {
@@ -9,7 +8,7 @@ export interface Task {
   site: Site;
   proxy?: Proxy;
   proxyLists?: Map<ProxyListId, any>;
-  page?: Page;
+  page: string;
   status: TaskStatus;
   getFromProxyPool: boolean;
   product: Product;
