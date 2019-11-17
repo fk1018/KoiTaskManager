@@ -6,6 +6,44 @@ import { Proxy } from '../models/Proxy';
 import { Product } from '../models/Product';
 
 export const Any = {
+  Product(
+    {
+      id = faker.random.uuid(),
+      name = faker.random.word(),
+      productId = faker.random.uuid(),
+      variants = [],//@todo fix this
+      sizes = [],//@todo fix thi
+      positiveKeywords = [],//@todo fix this
+      negativeKeywords = [],//@todo fix this
+      url = faker.internet.url(),
+      imgUrl = faker.internet.url(),
+      styleCode = faker.random.uuid()
+    }: ProductParams = {
+      id :faker.random.uuid(),
+      name : faker.random.word(),
+      productId : faker.random.uuid(),
+      variants : [],//@todo fix this
+      sizes : [],//@todo fix thi
+      positiveKeywords : [],//@todo fix this
+      negativeKeywords : [],//@todo fix this
+      url :  faker.internet.url(),
+      imgUrl : faker.internet.url(),
+      styleCode : faker.random.uuid()
+    }
+  ): Product {
+    return {
+      id,
+      name,
+      productId,
+      variants,
+      sizes,
+      positiveKeywords,
+      negativeKeywords,
+      url,
+      imgUrl,
+      styleCode,
+    };
+  },
   Task(
     {
       id = faker.random.uuid(),
@@ -64,6 +102,19 @@ export const Helpers = {
     }
     return returnArray;
   },
+};
+
+type ProductParams = {
+  id?: string;
+  name?:string;
+  productId?: string;
+  variants?: string[];
+  sizes?: string[];
+  positiveKeywords?: string[];
+  negativeKeywords?: string[];
+  url?: string;
+  imgUrl?: string;
+  styleCode?: string;
 };
 
 type TaskParams = {

@@ -1,5 +1,6 @@
 export interface Product {
   id: string;
+  name:string;
   productId: string;
   variants?: string[];
   sizes?: string[];
