@@ -1,6 +1,6 @@
 export interface Product {
   id: string;
-  productId?: string[];
+  productId: string;
   variants?: string[];
   sizes?: string[];
   positiveKeywords?: string[];
