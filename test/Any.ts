@@ -85,6 +85,23 @@ export const Any = {
       name
     };
   },
+  Site(
+    {
+      id = faker.random.uuid(),
+      name = faker.random.word(),
+      action = []//@todo fix this
+    }: SiteParams = {
+      id :faker.random.uuid(),
+      name: faker.random.word(),
+      action: []//@todo fix this
+    }
+  ): Site {
+    return {
+      id,
+      name,
+      action
+    };
+  },
   Task(
     {
       id = faker.random.uuid(),
@@ -96,10 +113,10 @@ export const Any = {
         id: faker.random.uuid(),
         name: faker.random.word(),
         productId: faker.random.uuid(),
-        variants: [],
-        sizes: [],
-        positiveKeywords: [],
-        negativeKeywords: [],
+        variants: [],//@todo fix this
+        sizes: [],//@todo fix this
+        positiveKeywords: [],//@todo fix this
+        negativeKeywords: [],//@todo fix this
         url: faker.internet.url(),
         imgUrl: faker.internet.url(),
         styleCode: faker.random.uuid(),
@@ -115,10 +132,10 @@ export const Any = {
         id: faker.random.uuid(),
         name:faker.random.word(),
         productId: faker.random.uuid(),
-        variants: [],
-        sizes: [],
-        positiveKeywords: [],
-        negativeKeywords: [],
+        variants: [],//@todo fix this
+        sizes: [],//@todo fix this
+        positiveKeywords: [],//@todo fix this
+        negativeKeywords: [],//@todo fix this
         url: faker.internet.url(),
         imgUrl: faker.internet.url(),
         styleCode: faker.random.uuid(),
@@ -174,6 +191,11 @@ type ProxyListParams = {
   name?: string;
 }
 
+type SiteParams = {
+  id?: string;
+  name?: string;
+  action?: { (): void }[];
+}
 
 type TaskParams = {
   id?: string;
