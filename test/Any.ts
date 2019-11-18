@@ -152,6 +152,21 @@ export const Any = {
       page
     };
   },
+  TaskStatus(
+    {
+      id = faker.random.uuid(),
+      display = faker.random.word(),
+    }: TaskStatusParams = {
+      id :faker.random.uuid(),
+      display: faker.random.word(),
+
+    }
+  ): TaskStatus {
+    return {
+      id,
+      display
+    };
+  },
 };
 
 export const Helpers = {
@@ -208,3 +223,8 @@ type TaskParams = {
   getFromProxyPool?: boolean;
   product?: Product;
 };
+
+type TaskStatusParams = {
+  id?: string;
+  display?: string;
+}

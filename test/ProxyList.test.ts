@@ -1,6 +1,6 @@
 import { Any } from './Any';
 
-describe('proxyList interface', () => {
+describe('proxy list interface', () => {
   describe('has a(n)',()=>{
     it('id',()=>{
       const proxyList = Any.ProxyList();
