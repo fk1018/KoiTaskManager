@@ -1,36 +1,36 @@
 import { Any } from './Any';
 
 describe('product interface', () => {
-  describe('has a(n)',()=>{
-    it('id',()=>{
+  describe('has a(n)', () => {
+    it('id', () => {
       const product = Any.Product();
 
       expect(product.id).toBeTruthy();
-    })
-    it('name',()=>{
+    });
+    it('name', () => {
       const product = Any.Product();
 
       expect(product.name).toBeTruthy();
-    })
-    it('productId',()=>{
+    });
+    it('productId', () => {
       const product = Any.Product();
 
       expect(product.productId).toBeTruthy();
-    })
-    it('url',()=>{
+    });
+    it('url', () => {
       const product = Any.Product();
 
       expect(product.url).toBeTruthy();
-    })
-    it('imgUrl',()=>{
+    });
+    it('imgUrl', () => {
       const product = Any.Product();
 
       expect(product.imgUrl).toBeTruthy();
-    })
-    it('styleCode',()=>{
+    });
+    it('styleCode', () => {
       const product = Any.Product();
 
       expect(product.styleCode).toBeTruthy();
-    })
-  })
+    });
+  });
 });

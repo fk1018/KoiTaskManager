@@ -12,24 +12,24 @@ export const Any = {
       id = faker.random.uuid(),
       name = faker.random.word(),
       productId = faker.random.uuid(),
-      variants = [],//@todo fix this
-      sizes = [],//@todo fix thi
-      positiveKeywords = [],//@todo fix this
-      negativeKeywords = [],//@todo fix this
+      variants = [], //@todo fix this
+      sizes = [], //@todo fix thi
+      positiveKeywords = [], //@todo fix this
+      negativeKeywords = [], //@todo fix this
       url = faker.internet.url(),
       imgUrl = faker.internet.url(),
-      styleCode = faker.random.uuid()
+      styleCode = faker.random.uuid(),
     }: ProductParams = {
-      id :faker.random.uuid(),
-      name : faker.random.word(),
-      productId : faker.random.uuid(),
-      variants : [],//@todo fix this
-      sizes : [],//@todo fix thi
-      positiveKeywords : [],//@todo fix this
-      negativeKeywords : [],//@todo fix this
-      url :  faker.internet.url(),
-      imgUrl : faker.internet.url(),
-      styleCode : faker.random.uuid()
+      id: faker.random.uuid(),
+      name: faker.random.word(),
+      productId: faker.random.uuid(),
+      variants: [], //@todo fix this
+      sizes: [], //@todo fix thi
+      positiveKeywords: [], //@todo fix this
+      negativeKeywords: [], //@todo fix this
+      url: faker.internet.url(),
+      imgUrl: faker.internet.url(),
+      styleCode: faker.random.uuid(),
     }
   ): Product {
     return {
@@ -48,16 +48,16 @@ export const Any = {
   Proxy(
     {
       id = faker.random.uuid(),
-      listsContainedIn = new Map(),//@todo fix this
+      listsContainedIn = new Map(), //@todo fix this
       password = faker.internet.password(),
-      uri =  faker.internet.ip(),
-      userName = faker.internet.userName()
+      uri = faker.internet.ip(),
+      userName = faker.internet.userName(),
     }: ProxyParams = {
-      id :faker.random.uuid(),
-      listsContainedIn: new Map(),//@todo fix this
+      id: faker.random.uuid(),
+      listsContainedIn: new Map(), //@todo fix this
       password: faker.internet.password(),
       uri: faker.internet.ip(),
-      userName: faker.internet.userName()
+      userName: faker.internet.userName(),
     }
   ): Proxy {
     return {
@@ -71,35 +71,35 @@ export const Any = {
   ProxyList(
     {
       id = faker.random.uuid(),
-      list = new Map(),//@todo fix this
-      name = faker.random.word()
+      list = new Map(), //@todo fix this
+      name = faker.random.word(),
     }: ProxyListParams = {
-      id :faker.random.uuid(),
-      list: new Map(),//@todo fix this
-      name: faker.random.word()
+      id: faker.random.uuid(),
+      list: new Map(), //@todo fix this
+      name: faker.random.word(),
     }
   ): ProxyList {
     return {
       id,
       list,
-      name
+      name,
     };
   },
   Site(
     {
       id = faker.random.uuid(),
       name = faker.random.word(),
-      action = []//@todo fix this
+      action = [], //@todo fix this
     }: SiteParams = {
-      id :faker.random.uuid(),
+      id: faker.random.uuid(),
       name: faker.random.word(),
-      action: []//@todo fix this
+      action: [], //@todo fix this
     }
   ): Site {
     return {
       id,
       name,
-      action
+      action,
     };
   },
   Task(
@@ -113,15 +113,15 @@ export const Any = {
         id: faker.random.uuid(),
         name: faker.random.word(),
         productId: faker.random.uuid(),
-        variants: [],//@todo fix this
-        sizes: [],//@todo fix this
-        positiveKeywords: [],//@todo fix this
-        negativeKeywords: [],//@todo fix this
+        variants: [], //@todo fix this
+        sizes: [], //@todo fix this
+        positiveKeywords: [], //@todo fix this
+        negativeKeywords: [], //@todo fix this
         url: faker.internet.url(),
         imgUrl: faker.internet.url(),
         styleCode: faker.random.uuid(),
       },
-      page = faker.random.uuid()
+      page = faker.random.uuid(),
     }: TaskParams = {
       id: faker.random.uuid(),
       name: faker.random.word(),
@@ -130,12 +130,12 @@ export const Any = {
       getFromProxyPool: faker.random.boolean(),
       product: {
         id: faker.random.uuid(),
-        name:faker.random.word(),
+        name: faker.random.word(),
         productId: faker.random.uuid(),
-        variants: [],//@todo fix this
-        sizes: [],//@todo fix this
-        positiveKeywords: [],//@todo fix this
-        negativeKeywords: [],//@todo fix this
+        variants: [], //@todo fix this
+        sizes: [], //@todo fix this
+        positiveKeywords: [], //@todo fix this
+        negativeKeywords: [], //@todo fix this
         url: faker.internet.url(),
         imgUrl: faker.internet.url(),
         styleCode: faker.random.uuid(),
@@ -149,7 +149,7 @@ export const Any = {
       site,
       getFromProxyPool,
       product,
-      page
+      page,
     };
   },
   TaskStatus(
@@ -157,14 +157,13 @@ export const Any = {
       id = faker.random.uuid(),
       display = faker.random.word(),
     }: TaskStatusParams = {
-      id :faker.random.uuid(),
+      id: faker.random.uuid(),
       display: faker.random.word(),
-
     }
   ): TaskStatus {
     return {
       id,
-      display
+      display,
     };
   },
 };
@@ -181,7 +180,7 @@ export const Helpers = {
 
 type ProductParams = {
   id?: string;
-  name?:string;
+  name?: string;
   productId?: string;
   variants?: string[];
   sizes?: string[];
@@ -198,19 +197,19 @@ type ProxyParams = {
   password?: string;
   uri?: string;
   userName?: string;
-}
+};
 
 type ProxyListParams = {
   id?: string;
   list?: Map<string, Proxy[]>;
   name?: string;
-}
+};
 
 type SiteParams = {
   id?: string;
   name?: string;
   action?: { (): void }[];
-}
+};
 
 type TaskParams = {
   id?: string;
@@ -227,4 +226,4 @@ type TaskParams = {
 type TaskStatusParams = {
   id?: string;
   display?: string;
-}
+};
