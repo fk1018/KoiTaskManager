@@ -3,33 +3,10 @@ import { Task } from '../models/Task';
 import { TaskStatus } from '../models/TaskStatus';
 import { Site } from '../models/Site';
 import { Proxy } from '../models/Proxy';
+import { ProxyList } from '../models/ProxyList';
 import { Product } from '../models/Product';
 
 export const Any = {
-  
-  Proxy(
-    {
-      id = faker.random.uuid(),
-      lists = new Map(),//@todo fix this
-      password = faker.internet.password(),
-      uri =  faker.internet.ip(),
-      userName = faker.internet.userName()
-    }: ProxyParams = {
-      id :faker.random.uuid(),
-      lists: new Map(),//@todo fix this
-      password: faker.internet.password(),
-      uri: faker.internet.ip(),
-      userName: faker.internet.userName()
-    }
-  ): Proxy {
-    return {
-      id,
-      lists,
-      password,
-      uri,
-      userName,
-    };
-  },
   Product(
     {
       id = faker.random.uuid(),
@@ -66,6 +43,46 @@ export const Any = {
       url,
       imgUrl,
       styleCode,
+    };
+  },
+  Proxy(
+    {
+      id = faker.random.uuid(),
+      listsContainedIn = new Map(),//@todo fix this
+      password = faker.internet.password(),
+      uri =  faker.internet.ip(),
+      userName = faker.internet.userName()
+    }: ProxyParams = {
+      id :faker.random.uuid(),
+      listsContainedIn: new Map(),//@todo fix this
+      password: faker.internet.password(),
+      uri: faker.internet.ip(),
+      userName: faker.internet.userName()
+    }
+  ): Proxy {
+    return {
+      id,
+      listsContainedIn,
+      password,
+      uri,
+      userName,
+    };
+  },
+  ProxyList(
+    {
+      id = faker.random.uuid(),
+      list = new Map(),//@todo fix this
+      name = faker.random.word()
+    }: ProxyListParams = {
+      id :faker.random.uuid(),
+      list: new Map(),//@todo fix this
+      name: faker.random.word()
+    }
+  ): ProxyList {
+    return {
+      id,
+      list,
+      name
     };
   },
   Task(
@@ -130,16 +147,6 @@ export const Helpers = {
   },
 };
 
-type ProxyParams = {
-  id?: string;
-  lists?: Map<string, any>;
-  password?: string;
-  uri?: string;
-  userName?: string;
-}
-
-
-
 type ProductParams = {
   id?: string;
   name?:string;
@@ -152,6 +159,21 @@ type ProductParams = {
   imgUrl?: string;
   styleCode?: string;
 };
+
+type ProxyParams = {
+  id?: string;
+  listsContainedIn?: Map<string, any>;
+  password?: string;
+  uri?: string;
+  userName?: string;
+}
+
+type ProxyListParams = {
+  id?: string;
+  list?: Map<string, Proxy[]>;
+  name?: string;
+}
+
 
 type TaskParams = {
   id?: string;
