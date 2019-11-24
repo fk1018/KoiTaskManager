@@ -1,4 +1,4 @@
-import Store from 'electron-store';
+const Store = require('electron-store');
 import * as faker from 'faker';
 import { Product } from '../models/Product';
 import { Proxy } from '../models/Proxy';
