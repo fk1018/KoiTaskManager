@@ -12,5 +12,12 @@ const ProxyLists: ProxyList[] = [];
 const Sites: Site[] = [];
 const Tasks : Task[] = [];
 const TaskStatus : TaskStatus[] = [];
-
 const store = new Store();
+
+//Create Task Status
+//Create Product
+//Create Site
+//Create ProxyList
+//Create Proxy
+//Create Task
+
