@@ -1,8 +1,8 @@
 import {Product} from "../models/Product";
 export const Products : Product[] = [
   {
-    id:"3a42f014-5ddf-46e0-8a8b-d42474ec1f97",
-    name:"yeezy supply",
+    id:"72d8b10e-fef2-40b4-b403-0a1e8e7ceb80",
+    name:"yeezy 500 salt",
     productId:"FW4839",
     sizes:["10","12"]
   }
