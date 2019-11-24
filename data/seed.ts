@@ -1,4 +1,3 @@
-const Store = require('electron-store');
 import * as faker from 'faker';
 import { Product } from '../models/Product';
 import { Proxy } from '../models/Proxy';
@@ -13,7 +12,6 @@ const ProxyLists: ProxyList[] = [];
 const Sites: Site[] = [];
 const Tasks: Task[] = [];
 const TaskStatuss: TaskStatus[] = [];
-const store = new Store();
 
 //Create Task Status's
 const idle : TaskStatus = {
@@ -103,10 +101,3 @@ ProxyLists.push(chiResi);
 Sites.push(yeezySupply);
 Tasks.push(task1);
 TaskStatuss.push(idle,starting,inLine,notFound,addingToCart,checkingOut,success,outOfStock);
-
-store.set("products",Products);
-store.set("proxys",Proxys);
-store.set("proxyLists",ProxyLists);
-store.set("sites",Sites);
-store.set("tasks",Tasks);
-store.set("taskStatuss",TaskStatuss);
