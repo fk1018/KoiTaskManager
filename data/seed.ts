@@ -64,12 +64,35 @@ const powerPhase : Product = {
   sizes:["8.5","7","10"]
 }
 //Create Site's
-const yeexySupply : Site = {
+const yeezySupply : Site = {
   id:faker.random.uuid(),
   name:"Yeezy Supply"
 }
 //Create ProxyList's
+const chiResi : ProxyList = {
+  id: faker.random.uuid(),
+  name: "Chi resi north virginia",
+  list: new Map(),
+}
 //Create Proxy's
-//Create Task's
+const proxy1 : Proxy = {
+  id: faker.random.uuid(),
+  uri:"snkrs-us-S77.chicooked.io:33128",
+  userName:"8HtvXIZ6!a1",
+  password:"paseRiJw"
+}
+//Assemble proxy and proxylist
+chiResi.list.set(proxy1.id,proxy1);
 
-//Store data yusing eletron store
+proxy1.listsContainedIn?.set(chiResi.id,true);//maybe update the value to be a boolean?
+//Create Task's
+const task1 : Task = {
+  id: faker.random.uuid(),
+  name:"Yeezy Supply Power Phase task",
+  site: yeezySupply,
+  product: powerPhase,
+  proxy:proxy1,
+  proxyLists: new Map([[chiResi.id,true]]),
+  getFromProxyPool:true
+}
+//Store data using eletron store
