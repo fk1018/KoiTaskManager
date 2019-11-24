@@ -13,7 +13,7 @@ export class TaskManager {
   poducts:Map<productId,Product>;
   productLists: Map<proxyListId,ProxyList>;
   constructor(){
-
+    
   }
 }
 
