@@ -1,6 +1,10 @@
 const Store = require('electron-store');
-import {Sites} from "./Site.seed";
-import {Products} from "./Product.seed";
-import {Proxys} from "./Proxy.seed";
-import {ProxyLists} from "./ProxyList.seed"
+import {Product} from "../models/Product";
+import {Proxy} from "../models/Proxy";
+import {ProxyList} from "../models/ProxyList";
+import {Site} from "../models/Site";
+import {Task} from "../models/Task";
+
+const Tasks : Task[] = [];
+
 const store = new Store();

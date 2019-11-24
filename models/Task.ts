@@ -8,8 +8,8 @@ export interface Task {
   site: Site;
   proxy?: Proxy;
   proxyLists?: Map<ProxyListId, any>;
-  page: string;
-  status: TaskStatus;
+  page?: string;
+  status?: TaskStatus;
   getFromProxyPool: boolean;
   product: Product;
 }
