@@ -12,7 +12,7 @@ const Proxys: Proxy[] = [];
 const ProxyLists: ProxyList[] = [];
 const Sites: Site[] = [];
 const Tasks: Task[] = [];
-const TaskStatus: TaskStatus[] = [];
+const TaskStatuss: TaskStatus[] = [];
 const store = new Store();
 
 //Create Task Status's
@@ -96,3 +96,17 @@ const task1 : Task = {
   getFromProxyPool:true
 }
 //Store data using eletron store
+
+Products.push(yeezy500Salt,yeezy500Salt);
+Proxys.push(proxy1);
+ProxyLists.push(chiResi);
+Sites.push(yeezySupply);
+Tasks.push(task1);
+TaskStatuss.push(idle,starting,inLine,notFound,addingToCart,checkingOut,success,outOfStock);
+
+store.set("products",Products);
+store.set("proxys",Proxys);
+store.set("proxyLists",ProxyLists);
+store.set("sites",Sites);
+store.set("tasks",Tasks);
+store.set("taskStatuss",TaskStatuss);
