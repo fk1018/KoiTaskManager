@@ -50,7 +50,24 @@ const outOfStock : TaskStatus = {
 }
 
 //Create Product's
+const yeezy500Salt : Product = {
+  id: faker.random.uuid(),
+  name:"Yeezy 500 salt",
+  productId:"FW4839",
+  sizes:["9","10","11"]
+}
+
+const powerPhase : Product = {
+  id: faker.random.uuid(),
+  name:"Yeezy Power Phase",
+  productId:"FV6125",
+  sizes:["8.5","7","10"]
+}
 //Create Site's
+const yeexySupply : Site = {
+  id:faker.random.uuid(),
+  name:"Yeezy Supply"
+}
 //Create ProxyList's
 //Create Proxy's
 //Create Task's
