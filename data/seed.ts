@@ -22,7 +22,7 @@ const idle : TaskStatus = {
 }
 const starting : TaskStatus = {
   id: faker.random.uuid(),
-  display:"Starting Task"
+  display:"Starting task"
 }
 const inLine: TaskStatus = {
   id: faker.random.uuid(),
@@ -38,7 +38,7 @@ const addingToCart : TaskStatus = {
 }
 const checkingOut : TaskStatus = {
   id: faker.random.uuid(),
-  display:"CheckingOut"
+  display:"Checking out"
 }
 const success : TaskStatus = {
   id: faker.random.uuid(),
